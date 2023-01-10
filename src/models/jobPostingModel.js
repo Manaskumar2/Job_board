@@ -23,10 +23,10 @@ const postingSchema = new mongoose.Schema({
    },
      employerId: {
         type: ObjectId,
-        ref: "Employer",
+        ref: "User",
         required:true
     },
-    isdeleted:{
+    isDeleted:{
         type:Boolean,
         default:false
     }

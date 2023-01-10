@@ -1,7 +1,14 @@
 const mongoose = require('mongoose')
 
+
 const userSchema = new mongoose.Schema({
 
+        title: { 
+            type: String,
+            trim: true,
+            required: true,
+            enum: ['Mr', 'Mrs', 'Miss']
+        },
 
         name: {
             type: String,
@@ -33,5 +40,4 @@ const userSchema = new mongoose.Schema({
 
 },{ timestamps: true })
 
-
-module.exports = mongoose.model("employee", userSchema);
+module.exports = mongoose.model("User",userSchema);
