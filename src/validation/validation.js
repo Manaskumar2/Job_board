@@ -46,8 +46,8 @@ const isMobile=  (mobile) => {
 }
 
 
-let isName =  (attribute) => {
-    return (/^[a-zA-Z]{2,20}$/.test(attribute.trim()))
+let isValidName =  (attribute) => {
+    return (/^[a-zA-Z]+ [a-zA-Z]+ [a-zA-Z]+$/.test(attribute.trim()))
 }
 
-module.exports ={isValidElem,experience,valid,isvalidReqBody,isValidObjectId,isValidEmail,isValidPassword,isMobile,isName,isValidTitle}
+module.exports ={isValidElem,experience,valid,isvalidReqBody,isValidObjectId,isValidEmail,isValidPassword,isMobile,isValidName,isValidTitle}

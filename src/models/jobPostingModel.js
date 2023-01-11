@@ -6,12 +6,15 @@ const postingSchema = new mongoose.Schema({
     title:{
         type:String
     },
-    discription:{
+    description:{
         type:String
     },
     skills:{
-        type:String,
-        required:true
+        type:[String],
+        required:true,
+        enum: ["JAVA", "JAVASCRIPT", "MONGODB", "NODEJS", "EXPRESS", "REACT", "AWS"],
+        toUpperCase: true,
+            trim: true
     },
    experience:{
     type:Number,
@@ -21,7 +24,7 @@ const postingSchema = new mongoose.Schema({
     type:String,
     require:true
    },
-     employerId: {
+     userId: {
         type: ObjectId,
         ref: "User",
         required:true

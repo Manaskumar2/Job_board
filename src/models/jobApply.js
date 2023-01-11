@@ -11,12 +11,34 @@ const mongoose = require('mongoose')
     },
     email:{
         type:String,
+        required:true,
+        unique:true
+    },
+    resume:{
+        type:String,
+        required: true
+    },
+    coverLetter:{
+        type:String,
         required:true
-        unicqu
+    },
+    userId:{
+        type: ObjectId,
+        ref: "User",
+        required:true
 
-    }
+    },
+     jobId: {
+            type: mongoose.Schema.Types.ObjectId,
+            required: true,
+            ref: 'Jobposting'
+        },
 
+isDeleted:{
+    type:Boolean,
+    default:false
+}
 
+ },{timestamp:true})
 
-
- })
+module.exports = mongoose.model("JobApply",applySchema)
